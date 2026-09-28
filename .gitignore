@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.log
+.pytest_cache/
+tmp/
+.idea/
+.vscode/
+.DS_Store
+
+# Local builds and packaged binaries
+build/
+dist/
+*.spec
+*.exe
+*.zip
+
+# Large downloadable model and generated media
+models/*.onnx
+examples/
+*.mp4
+
+# Local projects, caches, and credentials
+*.lingjian.json
+*.autosave.json
+workspace/
+.env
+.env.*
+web_workspace/
+.playwright-cli/
+output/playwright/

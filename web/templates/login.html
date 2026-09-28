@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>灵剪 · 登录</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+</head>
+<body>
+  <main class="auth-layout">
+    <section class="auth-showcase">
+      <div class="brand"><span class="brand-mark">✦</span> 灵剪 <small>Web Studio</small></div>
+      <div class="showcase-copy">
+        <p class="eyebrow">A LITTLE CUT. A BIG STORY.</p>
+        <h1 data-i18n="headline">从一个片段，<br>到你的故事。</h1>
+        <p data-i18n="subhead">导入、剪辑、导出。在浏览器里，专注于每一个好镜头。</p>
+      </div>
+      <div class="story-strips" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="security-note"><span>◆</span><div><strong data-i18n="localData">你的创作工作区</strong><p data-i18n="localDataHint">登录后继续整理素材、编辑片段和导出作品。</p></div></div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="language-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="zh" lang="zh-CN">中文</button><button type="button" data-lang="en" lang="en">EN</button>
+      </div>
+      <div class="auth-card">
+        <p class="eyebrow" id="formEyebrow">WELCOME BACK</p>
+        <h2 id="formTitle">登录灵剪</h2>
+        <p id="formDescription" class="form-description">输入账户信息以打开剪辑工作区。</p>
+        <div id="authBanner" class="auth-banner hidden" role="alert"></div>
+        <form id="authForm">
+          <label id="setupTokenRow" class="hidden"><span data-i18n="setupToken">初始化密钥</span><input id="setupToken" name="setup_token" type="password" autocomplete="off" maxlength="256"><small data-i18n="setupTokenHint">由网站部署者从部署控制台获取，仅首次创建管理员时使用。</small></label>
+          <label><span data-i18n="username">用户名</span><input id="username" name="username" autocomplete="username" minlength="3" maxlength="32" required></label>
+          <label><span data-i18n="password">密码</span><input id="password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required></label>
+          <label id="confirmRow" class="hidden"><span data-i18n="confirmPassword">确认密码</span><input id="confirmPassword" name="confirm_password" type="password" autocomplete="new-password" minlength="8" maxlength="128"></label>
+          <button id="submitBtn" class="primary" type="submit">登录</button>
+        </form>
+        <p class="privacy" data-i18n="privacy">请在离开前保存工程，仅在可信设备上保持登录。</p>
+        <a class="auth-guide-link" href="{{ url_for('guide_page') }}" data-guide-link target="_blank" rel="noopener" data-i18n="userGuide">第一次使用？查看使用指南</a>
+      </div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='language.js') }}"></script>
+  <script src="{{ url_for('static', filename='auth.js') }}"></script>
+</body>
+</html>
